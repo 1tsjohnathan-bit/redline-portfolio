@@ -11,35 +11,35 @@ const projects = [
     category: "HARDWARE / R&D",
     image: "/projects/wireless-mouse.jpg",
     summary:
-      "Exploring the design of a lightweight wireless computer mouse, including internal components, sensors, and hardware integration.",
+      "Planning a custom wireless gaming mouse by researching electronic components, system architecture, and hardware integration.",
     details:
-      "The goal is to understand how the sensor, microcontroller, wireless communication, battery, and internal connections work together in a compact device.",
-    tags: ["Hardware", "Electronics", "R&D"],
+      "CURRENT STAGE: DESIGN AND RESEARCH. The goal is to investigate how the optical sensor, microcontroller, wireless communication, battery, and internal connections work together in a compact device. Planned work includes comparing component specifications, evaluating trade-offs between performance and power consumption, and developing repeatable tests for latency, tracking consistency, and battery life once a prototype is available.",
+    tags: ["Hardware Research", "Component Selection", "Experimental Design"],
     status: "IN DEVELOPMENT",
   },
   {
     number: "02",
-    title: "Minecraft Chess Set",
-    category: "3D DESIGN",
-    image: "/projects/minecraft-chess.jpg",
-    summary:
-      "A custom chess set inspired by Minecraft characters and items, designed using 3D modeling tools.",
-    details:
-      "The design explores part modeling, extrusions, mirroring, and turning recognizable game elements into distinct chess pieces.",
-    tags: ["SolidWorks", "CAD", "3D Modeling"],
-    status: "DESIGN PROJECT",
-  },
-  {
-    number: "03",
     title: "Circuit Analysis",
     category: "ELECTRICAL ENGINEERING",
     image: "/projects/circuit-design.jpg",
     summary:
-      "Analyzing electrical circuits using circuit laws, simulation software, and laboratory measurements.",
+      "Analyzing electrical circuits through mathematical modeling, simulation, and laboratory measurements.",
     details:
-      "Work includes Ohm's law, Kirchhoff's laws, nodal analysis, mesh analysis, AC circuit behavior, and comparing calculated values with measured results.",
-    tags: ["LTspice", "KCL / KVL", "Testing"],
+      "Coursework includes Ohm's law, Kirchhoff's current and voltage laws, nodal analysis, mesh analysis, and AC circuit behavior. The work connects theoretical calculations with circuit simulations and experimental measurements to investigate voltage, current, resistance, and frequency response.",
+    tags: ["Circuit Analysis", "LTspice", "Testing"],
     status: "COURSEWORK",
+  },
+  {
+    number: "03",
+    title: "Minecraft Chess Set",
+    category: "CAD / DESIGN",
+    image: "/projects/minecraft-chess.jpg",
+    summary:
+      "A custom chess set inspired by Minecraft characters and items, designed using 3D modeling tools.",
+    details:
+      "The design explores part modeling, extrusions, mirroring, and turning recognizable game elements into distinct chess pieces. The project develops skills in CAD, geometric design, and translating an idea into a set of physical components.",
+    tags: ["SolidWorks", "CAD", "3D Modeling"],
+    status: "DESIGN PROJECT",
   },
   {
     number: "04",
@@ -49,7 +49,7 @@ const projects = [
     summary:
       "A Western-themed adventure game developed with MATLAB App Designer.",
     details:
-      "The game uses player and enemy health, combat interactions, and a graphical interface to create a simple interactive game experience.",
+      "The game uses player and enemy health, combat interactions, and a graphical interface to create a simple interactive game. The project demonstrates programming logic, state management, and the development of an interactive application.",
     tags: ["MATLAB", "App Designer", "Logic"],
     status: "PROGRAMMING PROJECT",
   },
@@ -58,42 +58,80 @@ const projects = [
 const skillGroups = [
   {
     number: "01",
-    title: "Hardware & Circuits",
+    title: "Electrical Engineering",
     description:
-      "Analyzing, building, and testing electrical systems.",
+      "Understanding circuit behavior through analysis and simulation.",
     skills: [
       "Circuit Analysis",
+      "Ohm's Law",
+      "KCL / KVL",
+      "Nodal Analysis",
+      "Mesh Analysis",
+      "AC Circuits",
       "LTspice",
-      "Oscilloscopes",
-      "Multimeters",
-      "PCB Design",
     ],
   },
   {
     number: "02",
-    title: "Programming",
+    title: "Testing & Measurement",
     description:
-      "Writing code to solve problems and build applications.",
-    skills: ["C++", "Python", "MATLAB"],
+      "Investigating electrical systems using laboratory tools and data.",
+    skills: [
+      "Oscilloscopes",
+      "Multimeters",
+      "Signal Generators",
+      "Experimental Measurements",
+      "Data Analysis",
+    ],
   },
   {
     number: "03",
-    title: "Design & Prototyping",
+    title: "Programming & Simulation",
     description:
-      "Developing and modeling mechanical and electronic systems.",
-    skills: ["SolidWorks", "Arduino", "Microcontrollers"],
+      "Using software to analyze systems and solve technical problems.",
+    skills: ["C++", "Python", "MATLAB", "MATLAB App Designer"],
   },
   {
     number: "04",
-    title: "Engineering Workflow",
+    title: "Design & Development",
     description:
-      "Developing, testing, and improving technical projects.",
+      "Developing technical projects through modeling, iteration, and debugging.",
     skills: [
+      "SolidWorks",
+      "Arduino",
+      "Microcontrollers",
       "Git",
       "GitHub",
       "Debugging",
       "Troubleshooting",
     ],
+  },
+];
+
+const engineeringSteps = [
+  {
+    number: "01",
+    title: "Investigate",
+    description:
+      "Define the problem, research existing solutions, and identify design requirements.",
+  },
+  {
+    number: "02",
+    title: "Design",
+    description:
+      "Compare possible approaches, evaluate constraints, and develop a testable solution.",
+  },
+  {
+    number: "03",
+    title: "Measure",
+    description:
+      "Use calculations, simulations, and repeatable experiments to gather evidence.",
+  },
+  {
+    number: "04",
+    title: "Improve",
+    description:
+      "Compare results with expectations, investigate discrepancies, and determine the next step.",
   },
 ];
 
@@ -130,7 +168,7 @@ export default function Home() {
             JN<span className="text-[#F87171]">.</span>
           </a>
 
-          <div className="flex items-center gap-5 text-sm text-[#A89999] sm:gap-7">
+          <div className="flex items-center gap-4 text-xs text-[#A89999] sm:gap-7 sm:text-sm">
             <a
               href="#about"
               className="transition-colors hover:text-[#F5EEEE]"
@@ -142,6 +180,12 @@ export default function Home() {
               className="transition-colors hover:text-[#F5EEEE]"
             >
               Projects
+            </a>
+            <a
+              href="#approach"
+              className="hidden transition-colors hover:text-[#F5EEEE] sm:block"
+            >
+              Approach
             </a>
             <a
               href="#skills"
@@ -172,7 +216,7 @@ export default function Home() {
           <div className="mb-8 flex items-center gap-3">
             <span className="h-2 w-2 rounded-full bg-[#F87171] shadow-[0_0_14px_#F87171]" />
             <span className="text-xs font-medium tracking-[0.2em] text-[#A89999]">
-              ELECTRICAL ENGINEERING STUDENT
+              ELECTRICAL & COMPUTER ENGINEERING
             </span>
           </div>
 
@@ -182,11 +226,17 @@ export default function Home() {
             NEVIN<span className="text-[#F87171]">.</span>
           </h1>
 
-          <p className="mt-8 max-w-2xl text-base leading-8 text-[#A89999] sm:text-lg">
-            Interested in electrical engineering, hardware development,
-            and research and development. I enjoy working on
-            project-driven problems and learning how things work from
-            the circuit level up.
+          <h2 className="mt-7 max-w-4xl text-2xl font-semibold leading-tight tracking-tight text-[#F5EEEE] sm:text-4xl">
+            Turning engineering questions into{" "}
+            <span className="text-[#F87171]">experiments.</span>
+          </h2>
+
+          <p className="mt-6 max-w-2xl text-base leading-8 text-[#A89999] sm:text-lg">
+            I'm an Electrical and Computer Engineering student at
+            Northeastern University interested in hardware development,
+            experimental testing, and research and development. I enjoy
+            understanding how systems behave, investigating technical
+            problems, and using evidence to guide design decisions.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
@@ -200,8 +250,6 @@ export default function Home() {
             <a
               href="/documents/resume.pdf"
               download="John-Nevin-Resume.pdf"
-              target="_blank"
-              rel="noreferrer"
               className="rounded-lg border border-white/15 px-6 py-3 text-sm font-semibold text-[#F5EEEE] transition-all hover:border-[#F87171]/60 hover:bg-white/[0.04]"
             >
               Download Résumé <span aria-hidden="true">↓</span>
@@ -212,8 +260,8 @@ export default function Home() {
         <div className="mt-20 flex flex-wrap gap-x-10 gap-y-3 border-t border-white/[0.08] pt-6 text-xs tracking-wider text-[#A89999]">
           <span>01 / HARDWARE</span>
           <span>02 / CIRCUITS</span>
-          <span>03 / R&D</span>
-          <span>04 / PROTOTYPING</span>
+          <span>03 / EXPERIMENTS</span>
+          <span>04 / R&D</span>
         </div>
       </section>
 
@@ -226,27 +274,30 @@ export default function Home() {
 
         <div className="grid gap-10 md:grid-cols-[1.3fr_0.7fr] md:gap-20">
           <h2 className="text-3xl font-semibold leading-tight tracking-tight text-[#F5EEEE] sm:text-4xl md:text-5xl">
-            Building, testing, and understanding{" "}
+            Understanding the problem.{" "}
             <span className="text-[#F87171]">
-              how things work.
+              Testing the possibilities.
             </span>
           </h2>
 
           <div className="space-y-5 text-sm leading-7 text-[#A89999] sm:text-base">
             <p>
               I am an Electrical and Computer Engineering student at
-              Northeastern University interested in practical
-              engineering and hands-on problem solving.
+              Northeastern University interested in hardware engineering,
+              research and development, and experimental design.
             </p>
+
             <p>
               Through coursework and personal projects, I am developing
-              experience with circuit analysis, programming, simulation,
-              and computer-aided design.
+              experience in circuit analysis, electrical measurements,
+              simulation, programming, and computer-aided design.
             </p>
+
             <p>
-              I am especially interested in opportunities where I can
-              contribute to a team, troubleshoot real engineering
-              problems, and learn through building and testing.
+              I am especially interested in project-driven environments
+              where I can investigate technical questions, troubleshoot
+              problems, work with a team, and learn through testing and
+              iteration.
             </p>
           </div>
         </div>
@@ -263,9 +314,10 @@ export default function Home() {
           <h2 className="text-4xl font-semibold tracking-tight text-[#F5EEEE] sm:text-5xl">
             Projects<span className="text-[#F87171]">.</span>
           </h2>
+
           <p className="max-w-sm text-sm leading-6 text-[#A89999]">
-            A collection of engineering, design, and programming
-            projects.
+            Engineering investigations, coursework, and design projects
+            focused on understanding how things work.
           </p>
         </div>
 
@@ -289,10 +341,13 @@ export default function Home() {
                     alt={project.title}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                   />
+
                   <div className="absolute inset-0 bg-gradient-to-t from-[#151010]/70 via-transparent to-transparent" />
+
                   <span className="absolute left-5 top-5 rounded-md border border-white/15 bg-[#151010]/75 px-3 py-1.5 text-[10px] font-semibold tracking-[0.16em] text-[#F5EEEE] backdrop-blur">
                     {project.category}
                   </span>
+
                   <span className="absolute bottom-5 right-5 text-3xl font-bold tracking-tight text-white/80">
                     {project.number}
                   </span>
@@ -332,7 +387,8 @@ export default function Home() {
                     }
                     className="mt-6 flex w-full items-center justify-between border-t border-white/[0.08] pt-4 text-left text-sm font-medium text-[#F5EEEE] transition-colors hover:text-[#F87171]"
                   >
-                    {isExpanded ? "Show less" : "More about this project"}
+                    {isExpanded ? "Show less" : "Engineering details"}
+
                     <motion.span
                       animate={{ rotate: isExpanded ? 45 : 0 }}
                       transition={{ duration: 0.2 }}
@@ -365,21 +421,94 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ENGINEERING APPROACH */}
+      <section
+        id="approach"
+        className="mx-auto max-w-7xl scroll-mt-24 px-6 py-24 md:px-10"
+      >
+        <SectionLabel number="03">ENGINEERING APPROACH</SectionLabel>
+
+        <div className="mb-12 grid gap-6 md:grid-cols-[1fr_0.7fr] md:items-end">
+          <h2 className="text-4xl font-semibold leading-tight tracking-tight text-[#F5EEEE] sm:text-5xl">
+            Questions lead to{" "}
+            <span className="text-[#F87171]">better designs.</span>
+          </h2>
+
+          <p className="text-sm leading-7 text-[#A89999] sm:text-base">
+            My goal is to approach engineering problems methodically:
+            understand the requirements, evaluate possible solutions,
+            investigate the results, and use what I learn to guide the
+            next step.
+          </p>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {engineeringSteps.map((step, index) => (
+            <motion.div
+              key={step.number}
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.4, delay: index * 0.07 }}
+              className="rounded-2xl border border-white/[0.09] bg-white/[0.025] p-6 transition-colors hover:border-[#F87171]/40 sm:p-7"
+            >
+              <span className="text-sm font-semibold tracking-wider text-[#F87171]">
+                {step.number}
+              </span>
+
+              <h3 className="mt-5 text-xl font-semibold text-[#F5EEEE]">
+                {step.title}
+              </h3>
+
+              <p className="mt-3 text-sm leading-7 text-[#A89999]">
+                {step.description}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="mt-6 rounded-2xl border border-[#F87171]/20 bg-[#F87171]/[0.04] p-6 sm:p-8">
+          <p className="text-xs font-semibold tracking-[0.18em] text-[#F87171]">
+            CURRENT INVESTIGATION
+          </p>
+
+          <h3 className="mt-3 text-xl font-semibold text-[#F5EEEE] sm:text-2xl">
+            Designing a custom wireless gaming mouse
+          </h3>
+
+          <p className="mt-3 max-w-3xl text-sm leading-7 text-[#A89999]">
+            I am researching components and system architecture before
+            building a prototype. The next steps are to establish
+            measurable requirements, compare candidate components, and
+            develop a test plan for performance, power consumption, and
+            reliability.
+          </p>
+
+          <a
+            href="#projects"
+            className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#F87171] transition-colors hover:text-[#FDA4A4]"
+          >
+            Explore the project <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
+
       {/* TECHNICAL SKILLS */}
       <section
         id="skills"
         className="mx-auto max-w-7xl scroll-mt-24 px-6 py-24 md:px-10"
       >
-        <SectionLabel number="03">CAPABILITIES</SectionLabel>
+        <SectionLabel number="04">TECHNICAL CAPABILITIES</SectionLabel>
 
         <div className="mb-12 grid gap-5 md:grid-cols-[1fr_0.65fr] md:items-end">
           <h2 className="text-4xl font-semibold tracking-tight text-[#F5EEEE] sm:text-5xl md:text-6xl">
             Technical Skills<span className="text-[#F87171]">.</span>
           </h2>
+
           <p className="max-w-lg text-sm leading-7 text-[#A89999]">
-            Tools and technologies I have used through coursework and
-            projects, with a focus on circuits, hardware, programming,
-            and design.
+            Technical tools and concepts developed through coursework
+            and projects, with an emphasis on electrical engineering,
+            measurement, and problem solving.
           </p>
         </div>
 
@@ -397,6 +526,7 @@ export default function Home() {
                 <span className="text-xs font-semibold tracking-[0.18em] text-[#F87171]">
                   {group.number} / 04
                 </span>
+
                 <span className="text-2xl text-[#F87171] transition-transform duration-300 group-hover:rotate-12">
                   +
                 </span>
@@ -429,6 +559,7 @@ export default function Home() {
             <p className="text-lg font-semibold text-[#F5EEEE]">
               Want the full picture?
             </p>
+
             <p className="mt-1 text-sm leading-6 text-[#A89999]">
               View my résumé for additional details about my background
               and experience.
@@ -438,8 +569,6 @@ export default function Home() {
           <a
             href="/documents/resume.pdf"
             download="John-Nevin-Resume.pdf"
-            target="_blank"
-            rel="noreferrer"
             className="inline-flex shrink-0 items-center gap-3 rounded-lg bg-[#F87171] px-5 py-3 text-sm font-semibold text-[#151010] transition-all hover:-translate-y-0.5 hover:bg-[#FDA4A4]"
           >
             Download Résumé <span aria-hidden="true">↓</span>
@@ -452,18 +581,20 @@ export default function Home() {
         id="contact"
         className="mx-auto max-w-7xl scroll-mt-24 px-6 py-24 md:px-10"
       >
-        <SectionLabel number="04">GET IN TOUCH</SectionLabel>
+        <SectionLabel number="05">GET IN TOUCH</SectionLabel>
 
         <div className="rounded-3xl border border-white/[0.09] bg-white/[0.025] p-8 sm:p-12 md:p-16">
           <h2 className="max-w-3xl text-4xl font-semibold leading-tight tracking-tight text-[#F5EEEE] sm:text-5xl md:text-6xl">
-            Let's build something{" "}
-            <span className="text-[#F87171]">useful.</span>
+            Let's investigate what's{" "}
+            <span className="text-[#F87171]">possible.</span>
           </h2>
 
           <p className="mt-6 max-w-xl text-sm leading-7 text-[#A89999] sm:text-base">
-            I am interested in engineering co-op opportunities and
-            projects involving electrical systems, hardware development,
-            and R&D.
+            I am interested in electrical engineering co-op
+            opportunities involving hardware development, experimental
+            testing, and research and development. I look forward to
+            contributing to a team while developing my engineering
+            skills through hands-on work.
           </p>
 
           <div className="mt-9 flex flex-wrap gap-4">
@@ -492,10 +623,6 @@ export default function Home() {
               GitHub ↗
             </a>
           </div>
-          <p className="mt-5 text-xs leading-5 text-[#A89999]">
-            Remember to replace the example email and social links with
-            your actual profiles.
-          </p>
         </div>
       </section>
 
@@ -505,7 +632,9 @@ export default function Home() {
           <span>
             JOHN NEVIN<span className="text-[#F87171]">.</span>
           </span>
-          <span>Electrical & Computer Engineering</span>
+
+          <span>Electrical & Computer Engineering · Hardware R&D</span>
+
           <a
             href="#home"
             className="transition-colors hover:text-[#F87171]"
