@@ -475,7 +475,7 @@ export default function Home() {
             </a>
 
             <a
-              href="https://www.linkedin.com/JohNevin"
+              href="https://www.linkedin.com/in/johnevin/"
               target="_blank"
               rel="noreferrer"
               className="rounded-lg border border-white/15 px-6 py-3 text-sm font-semibold text-[#F5EEEE] transition-colors hover:border-[#F87171]/60"
