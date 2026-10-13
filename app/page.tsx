@@ -236,7 +236,7 @@ export default function Home() {
             Northeastern University interested in hardware development,
             experimental testing, and research and development. I enjoy
             understanding how systems behave, investigating technical
-            problems, and using evidence to guide design decisions.
+            problems, and using evidence to guide decisions!
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
@@ -274,9 +274,9 @@ export default function Home() {
 
         <div className="grid gap-10 md:grid-cols-[1.3fr_0.7fr] md:gap-20">
           <h2 className="text-3xl font-semibold leading-tight tracking-tight text-[#F5EEEE] sm:text-4xl md:text-5xl">
-            Understanding the problem.{" "}
+            Understanding the problem!{" "}
             <span className="text-[#F87171]">
-              Testing the possibilities.
+              Testing the possibilities!
             </span>
           </h2>
 
@@ -317,7 +317,7 @@ export default function Home() {
 
           <p className="max-w-sm text-sm leading-6 text-[#A89999]">
             Engineering investigations, coursework, and design projects
-            focused on understanding how things work.
+            focused on understanding how things work and how to make them better!
           </p>
         </div>
 
@@ -435,10 +435,9 @@ export default function Home() {
           </h2>
 
           <p className="text-sm leading-7 text-[#A89999] sm:text-base">
-            My goal is to approach engineering problems methodically:
-            understand the requirements, evaluate possible solutions,
-            investigate the results, and use what I learn to guide the
-            next step.
+            My approach to engineering is built around problem-solving,
+            experimentation, and continuous improvement. I focus on understanding 
+            the problem, testing possible solutions, and learning from the results.
           </p>
         </div>
 
