@@ -227,8 +227,8 @@ export default function Home() {
           </h1>
 
           <h2 className="mt-7 max-w-4xl text-2xl font-semibold leading-tight tracking-tight text-[#F5EEEE] sm:text-4xl">
-            Turning engineering questions into{" "}
-            <span className="text-[#F87171]">experiments.</span>
+            Design. Build. Test.{" "}
+            <span className="text-[#F87171]">Repeat.</span>
           </h2>
 
           <p className="mt-6 max-w-2xl text-base leading-8 text-[#A89999] sm:text-lg">
